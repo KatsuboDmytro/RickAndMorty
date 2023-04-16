@@ -1,0 +1,9 @@
+@mixin font-face($font-family, $url, $weight, $style) {
+    @font-face {
+      font-family: "#{$font-family}";
+      src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+      font-weight: #{$weight};
+      font-display: swap;
+      font-style: $style;
+    }
+  }
