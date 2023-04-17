@@ -9,12 +9,11 @@ import { AuthProvider } from "./Auth/Auth";
 function App() {
     return (
         <>
-        <AuthProvider>
+        <AuthProvider/>
             <Routes>
                 <Route path={`/`} element={<RickAndMorty />} />
                 <Route path={`/character/:id`} element={<CharacterInfo />} />
             </Routes>
-        </AuthProvider>
         </>
     );
 }
