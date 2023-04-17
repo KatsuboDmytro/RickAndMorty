@@ -6,7 +6,8 @@
   list-style-type: none;
   font-size: 14px;
   font-weight: 400px;
-  font-family: "Oswald", serif;
+  font-family: 'Roboto';
+  font-style: normal;
 }
 
 img {
@@ -14,5 +15,5 @@ img {
 }
 
 a {
-  text-decoration: none;
+  color: $Black;
 }

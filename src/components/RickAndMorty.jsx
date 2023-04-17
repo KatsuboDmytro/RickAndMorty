@@ -3,8 +3,9 @@ import React from "react";
 import logo from '../assets/logoRickAndMorty.png';
 import find from '../assets/LeadingIcon.png'
 import Characters from './Characaters/Characters';
+import CardSkeleton from './Skeleton/Skeleton';
 
-const RickAndMorty = ({ characterArr, isLoading, setSearchParams }) => {
+const RickAndMorty = ({ characterArr, isLoading }) => {
     console.log(characterArr);
     const [searchValue, setSearchValue] = React.useState('');
     const sortedCharacters = characterArr && characterArr.sort((a, b) => a.name.localeCompare(b.name));
@@ -23,6 +24,10 @@ const RickAndMorty = ({ characterArr, isLoading, setSearchParams }) => {
             </div>
             <div className='sitcom__characters'>
                 {
+                    isLoading
+                    ?
+                        Array(8).fill().map((_, i) => <CardSkeleton key={i} />)
+                    :
                     sortedCharacters
                     .filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase()))
                     .map(item => <Characters key={item.id} {...item}/>)

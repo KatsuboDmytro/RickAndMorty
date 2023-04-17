@@ -14,6 +14,6 @@ export const getCharacterById = async (id) => {
     const { data } = await axios.get(`/character/${id}`);
     return data;
   } catch (error) {
-    throw new Error("Failed to get character");
+    throw new Error("Failed to get character id");
   }
 };

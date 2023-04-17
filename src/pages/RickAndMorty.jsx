@@ -6,15 +6,16 @@ import { getCharacters } from "../APIdata/CharactersAPI";
 
 const RickAndMortyPage = () => {
     const [characterArr, setCharacterArr] = React.useState([]);
-    const [isLoading, setIsLoading] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
 
     React.useEffect(() => {
         async function fetchCharacters(){
+            setIsLoading(true);
             try {
                 const characters = await getCharacters(searchParams);
                 setCharacterArr(characters);
-                setIsLoading(true);
+                setIsLoading(false);
             } catch (error) {
                 console.error('Error in fetching characters');
                 setIsLoading(false);
