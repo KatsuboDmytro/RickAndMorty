@@ -29,3 +29,29 @@
         left: 16px;
     }
 }
+
+@media screen and (min-width: 580px) and (max-width: 1060px) {
+    .sitcom{
+        max-width: 800px;
+        &__characters{
+            grid-template-columns: repeat(2, 240px);
+        }
+        &__findByName{
+            margin: 16px 0px 51px 0px;
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 580px) {
+    .sitcom{
+        max-width: 400px;
+        &__characters{
+            grid-template-columns: repeat(1, 240px);
+        }
+        &__findByName{
+            margin: 16px 0px 51px 0px;
+            width: 90%;
+        }
+    }
+}
